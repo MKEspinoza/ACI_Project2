@@ -2,16 +2,32 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    camWidth = 320*2;
+    camHeight = 240*2;
+
+    vidGrabber.setVerbose(true);
+    vidGrabber.setDeviceID(0);
+    vidGrabber.setDesiredFrameRate(30);
+    vidGrabber.initGrabber(camWidth, camHeight);
+
+    vidPixels.allocate(camWidth, camHeight, OF_PIXELS_RGB);
+    vidTexture.allocate(vidPixels);
+
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    vidGrabber.update();
+
+    cvAvg( , IntPtr mask );
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    ofSetColor(ofColor::white);
+    vidGrabber.draw(ofGetWidth()/2 - camWidth/2, ofGetHeight()/2 - camHeight/2);
 
 }
 
@@ -56,6 +72,6 @@ void ofApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo){
 
 }
