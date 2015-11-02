@@ -25,6 +25,10 @@ class ofApp : public ofBaseApp{
     int                 camWidth, camHeight;
     ofxCvColorImage     colorImg;
 
+    int avg_red;
+    int avg_green;
+    int avg_blue;
+
     ofTexture       vidTexture;
     ofPixels        vidPixels;
 
