@@ -3,6 +3,7 @@
 #include "ofMain.h"
 
 #include "ofxOpenCv.h"
+#include "Star.h"
 
 class ofApp : public ofBaseApp{
 
@@ -32,4 +33,11 @@ class ofApp : public ofBaseApp{
     ofTexture       vidTexture;
     ofPixels        vidPixels;
 
+    ofImage starImg;
+    vector<Star*> stars;
+    ofRectangle* vidCollider;
+
+    int counter = 0;
+    int interval = 500;
+    int maxLifetime = interval * 50;
 };
